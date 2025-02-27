@@ -1,9 +1,14 @@
 import React from 'react';
+import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
+import { Outlet } from 'react-router-dom';
 
 const Main = () => {
   return (
     <div>
-      <h2 className='text-center py-7 text-4xl font-bold'>Hello Main Components</h2>
+      <Navbar></Navbar>
+      <Outlet></Outlet>
+      <Footer></Footer>
     </div>
   );
 };
