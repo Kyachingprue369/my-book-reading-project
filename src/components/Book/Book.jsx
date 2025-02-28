@@ -10,7 +10,7 @@ const Book = ({ book }) => {
         <div className="card bg-base-100 w-96 border-solid border-2 border-indigo-600">
           <figure className='bg-slate-300 rounded-xl p-5 m-6'>
             <img
-              className='w-[124px] h-[166px] mx-auto object-cover rounded-xl my-3'
+              className='w-[124px] h-[166px] mx-auto my-3'
               src={image}
               alt="Shoes" />
           </figure>

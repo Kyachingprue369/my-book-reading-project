@@ -5,7 +5,7 @@ const Navbar = () => {
 
   const links = <div className='flex gap-5 text-gray-500'>
     <li><NavLink to='/'>Home</NavLink></li>
-    <li><NavLink>Listed Books</NavLink></li>
+    <li><NavLink to='/listedBooks'>Listed Books</NavLink></li>
     <li><NavLink>Pages to Read</NavLink></li>
   </div>
   return (

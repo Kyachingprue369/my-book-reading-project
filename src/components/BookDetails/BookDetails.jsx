@@ -1,14 +1,22 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { addToStoredReadList } from '../../Utility/AddToDb';
+import { addToWishedStoredList } from '../../Utility/WishList';
 
 const BookDetails = () => {
   const { bookId } = useParams();
   const Id = parseInt(bookId)
 
-
   const data = useLoaderData();
   const book = data.find(book => book.bookId === Id)
   const { bookName, image, author, publisher, review, tags, rating, totalPages, yearOfPublishing } = book;
+
+  const handleMarkAsRead = (id) => {
+    addToStoredReadList(id);
+  }
+  const handleMarkAsWished = (Id) => {
+    addToWishedStoredList(Id);
+  }
 
   return (
     <div className='w-11/12 mx-auto my-5'>
@@ -41,8 +49,8 @@ const BookDetails = () => {
               <p>Rating: <span className='text-black pl-28 font-bold'>{rating}</span></p>
             </div>
             <div className='flex gap-3'>
-              <button className="btn text-white bg-green-400">Read</button>
-              <button className="btn text-white bg-green-400">Wishlist</button>
+              <button onClick={() => handleMarkAsRead(bookId)} className="btn btn-outline btn-accent">Read</button>
+              <button onClick={() => handleMarkAsWished(bookId)} className="btn text-white bg-green-400">Wishlist</button>
             </div>
           </div>
         </div>
