@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import { addToStoredReadList } from '../../Utility/AddToDb';
 import { addToWishedStoredList } from '../../Utility/WishList';
 
+
 const BookDetails = () => {
   const { bookId } = useParams();
   const Id = parseInt(bookId)
@@ -38,7 +39,7 @@ const BookDetails = () => {
               <p className='text-xl'>Tag </p>
               <div className='flex gap-3'>
                 {
-                  tags.map((tag, index) => <button key={index} className='btn bg-gray-200 rounded-full text-green-500'>#{tag}</button>)
+                  tags.map((tag, index) => <button key={index} className='py-1 px-3 bg-gray-200 rounded-full text-green-500'>#{tag}</button>)
                 }
               </div>
             </div>
@@ -50,7 +51,7 @@ const BookDetails = () => {
             </div>
             <div className='flex gap-3'>
               <button onClick={() => handleMarkAsRead(bookId)} className="btn btn-outline btn-accent">Read</button>
-              <button onClick={() => handleMarkAsWished(bookId)} className="btn text-white bg-green-400">Wishlist</button>
+              <button onClick={() => handleMarkAsWished(bookId)} className="btn text-white bg-blue-400">Wishlist</button>
             </div>
           </div>
         </div>
